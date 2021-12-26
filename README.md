@@ -38,8 +38,6 @@ GRANT all privileges on golang.* to 'golang'@'%';
 FLUSH PRIVILEGES;
 ```
 
-GRANT ALL PRIVILEGES ON golang.* TO 'golang'@'172.17.0.1';
-
 ## Criação de uma tabela de exemplo, usando o usuário de serviço
 
 ```sh
