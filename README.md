@@ -32,11 +32,13 @@ FLUSH PRIVILEGES;
 ## Criação de um usuário de serviço
 
 ```sql
-CREATE USER 'golang'@'localhost' IDENTIFIED BY 'golang';
-ALTER USER 'golang'@'localhost' IDENTIFIED BY 'S3nh4C0mpl3x4$';
-GRANT all privileges on golang.* to 'golang'@'localhost';
+CREATE USER 'golang'@'%' IDENTIFIED BY 'golang';
+ALTER USER 'golang'@'%' IDENTIFIED BY 'S3nh4C0mpl3x4$';
+GRANT all privileges on golang.* to 'golang'@'%';
 FLUSH PRIVILEGES;
 ```
+
+GRANT ALL PRIVILEGES ON golang.* TO 'golang'@'172.17.0.1';
 
 ## Criação de uma tabela de exemplo, usando o usuário de serviço
 
@@ -65,5 +67,4 @@ INSERT INTO produto (ds_produto) values ('iPhone 13 Pro');
 INSERT INTO produto (ds_produto) values ('iPhone 13 Pro Max');
 INSERT INTO produto (ds_produto) values ('AirPod Pro');
 INSERT INTO produto (ds_produto) values ('AirPod Max');
-);
 ```
